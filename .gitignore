@@ -1,0 +1,84 @@
+# base #
+########
+.vscode/
+.idea/
+*.log
+########
+
+# compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+###################
+
+# ansible #
+###########
+*.retry
+###########
+
+# python #
+##########
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+##########
+
+# distribution / packaging #
+############################
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+############################
+
+# unit test / coverage reports #
+################################
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+*/.pytest_cache/
+cover/
+################################
+
+# jupyter notebook #
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+####################
+
+# ipython #
+profile_default/
+ipython_config.py
+###########
+
+# project specific #
+files/scripts/**/
+####################

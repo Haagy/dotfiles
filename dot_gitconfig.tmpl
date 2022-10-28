@@ -1,0 +1,41 @@
+[user]
+    name = alexander haag
+    email = alexander_haag@gmx.de
+[github]
+    user = Haagy
+[color]
+    ui = auto
+[color "branch"]
+    current = red reverse
+    local = red
+    remote = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[alias]
+    l = log --stat
+    ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat
+	  up = "!git remote update -p; git merge --ff-only @{u}"
+    co = checkout
+    a = add
+    ci = commit --message
+    s = status
+    ss = status -sb
+    p = push
+    pf = push --force-with-lease
+[init]
+    defaultBranch = main
+[push]
+	  default = current
+[pull]
+    rebase = true
+[gpg]
+	  program = gpg
+[commit]
+{{- if eq .chezmoi.hostname "MBPvondobaadmin" }}
+	  gpgSign = true
+{{- else }}
+	  gpgSign = false
+{{- end }}
+

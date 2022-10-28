@@ -1,0 +1,23 @@
+skip_global_compinit=1
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit
+bashcompinit -i
+autoload -U +X bashcompinit && bashcompinit
+
+# Select theme
+{{- if eq .chezmoi.hostname "MBPvondobaadmin" }}
+# load theme
+ZSH_THEME="eastwood"
+
+# make brew available
+eval $(/opt/homebrew/bin/brew shellenv)
+{{- else }}
+ZSH_THEME="lukerandall"
+{{- end }}
+
+# load common bash/zsh compatible shell configs
+for rc in "$HOME/.common.sh.d"/*; do
+    source "$rc"
+done
+
+source "$HOME/.oh-my-zsh/oh-my-zsh.sh"

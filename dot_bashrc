@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# source the system profile
+if [ -e "/etc/profile" ]; then
+    source /etc/profile
+fi
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# Source bash completion
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+# Source bashmarks
+if [ -r /usr/local/bin/bashmarks.sh ]; then
+    . /usr/local/bin/bashmarks.sh
+fi
+
+# Source common
+for rc in "$HOME/.common.sh.d"/*; do
+    source "$rc"
+done
