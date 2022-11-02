@@ -22,8 +22,11 @@
     ci = commit --message
     s = status
     ss = status -sb
-    p = push
-    pf = push --force-with-lease
+    push = push origin
+    pushf = push --force-with-lease origin
+    pull = pull origin
+    rh = reset --hard
+    rs = reset --soft
 [init]
     defaultBranch = main
 [push]
