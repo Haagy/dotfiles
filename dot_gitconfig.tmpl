@@ -22,9 +22,9 @@
     ci = commit --message
     s = status
     ss = status -sb
-    push = push origin
-    pushf = push --force-with-lease origin
-    pull = pull origin
+    pusho = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    pushof = "!git push --force-with-lease origin \"$(git rev-parse --abbrev-ref HEAD)\""
+    pullo = "!git pull origin \"$(git rev-parse --abbrev-ref HEAD)\""
     rh = reset --hard
     rs = reset --soft
 [init]
@@ -37,7 +37,7 @@
 	  program = gpg
 [commit]
 {{- if eq .chezmoi.hostname "MBPvondobaadmin" }}
-	  gpgSign = true
+	  gpgSign = false
 {{- else }}
 	  gpgSign = false
 {{- end }}
