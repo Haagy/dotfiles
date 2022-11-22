@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+set -u
+
+DATA_VALUE=$1
+DATA_FILE="${HOME}/.local/share/chezmoi/.chezmoidata.toml"
+DATA_KEY=GIT_MAIL_ID
+
+if ! grep -R "^[#]*\s*${DATA_KEY} = .*" "$DATA_FILE" > /dev/null; then
+  echo "APPENDING because '${DATA_KEY}' not found"
+  echo "$DATA_KEY = '$DATA_VALUE'" >> "$DATA_FILE"
+else
+  echo "SETTING because '${DATA_KEY}' found already"
+  sed -ir "s/^[#]*\s*${DATA_KEY} = .*/$DATA_KEY = '$DATA_VALUE'/" "$DATA_FILE"
+fi
+
+chezmoi apply "${HOME}/.gitconfig"

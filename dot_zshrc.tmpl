@@ -20,4 +20,8 @@ for rc in "$HOME/.common.sh.d"/*; do
     source "$rc"
 done
 
+# add helpers to PATH
+chmod +x ${HOME}/.helper.sh.d/*
+PATH=${HOME}/.helper.sh.d:$PATH
+
 source "$HOME/.oh-my-zsh/oh-my-zsh.sh"

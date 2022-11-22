@@ -1,6 +1,11 @@
 [user]
+{{- if eq .GIT_MAIL_ID "Sulzer" }}
+    name = Alexander Haag (ext.)
+    email = Alexander.Haag.Partner@sulzer.de
+{{- else }}
     name = alexander haag
     email = alexander_haag@gmx.de
+{{- end }}
 [github]
     user = Haagy
 [color]
@@ -38,7 +43,7 @@
 	  program = gpg
 [commit]
 {{- if eq .chezmoi.hostname "MBPvondobaadmin" }}
-	  gpgSign = false
+	  gpgSign = true
 {{- else }}
 	  gpgSign = false
 {{- end }}

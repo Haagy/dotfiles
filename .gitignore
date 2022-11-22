@@ -80,5 +80,5 @@ ipython_config.py
 ###########
 
 # project specific #
-files/scripts/**/
+.chezmoidata.toml
 ####################
