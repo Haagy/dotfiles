@@ -1,15 +1,15 @@
 #!/bin/bash
-set -e
-set -u
 
 DATA_VALUE=None
-DATA_DIR="${HOME}/.local/share/chezmoi"
-DATA_FILE="${DATA_DIR}/.chezmoidata.toml"
 
-if [[ ! -d "$DATA_FILE" ]]; then
-  mkdir -p "$DATA_FILE"
+# check chezmoi data dir
+DATA_DIR="${HOME}/.local/share/chezmoi"
+if [[ ! -d "$DATA_DIR" ]]; then
+  mkdir -p "$DATA_DIR"
 fi
 
+# check chezmoi data file
+DATA_FILE="${DATA_DIR}/.chezmoidata.toml"
 if [[ ! -f "$DATA_FILE" ]]; then
   touch "$DATA_FILE"
 fi
