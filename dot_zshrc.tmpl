@@ -21,7 +21,10 @@ for rc in "$HOME/.common.sh.d"/*; do
 done
 
 # add helpers to PATH
-chmod +x ${HOME}/.helper.sh.d/*
-PATH=${HOME}/.helper.sh.d:$PATH
+if [[ -d "${HOME}/.helper.sh.d/" ]]
+then
+    chmod +x -R "${HOME}/.helper.sh.d/"
+    PATH=${HOME}/.helper.sh.d:${PATH}
+fi
 
 source "$HOME/.oh-my-zsh/oh-my-zsh.sh"
