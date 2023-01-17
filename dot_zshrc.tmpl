@@ -5,7 +5,7 @@ bashcompinit -i
 autoload -U +X bashcompinit && bashcompinit
 
 # Select theme
-{{- if eq .chezmoi.hostname "MacBook-Pro-von-devoba-admin" }}
+{{- if ( or ( eq .chezmoi.hostname "MacBook-Pro-von-devoba-admin" ) ( eq .chezmoi.hostname "LP30004" ) ) }}
 # load theme
 ZSH_THEME="eastwood"
 
