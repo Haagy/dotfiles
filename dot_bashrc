@@ -28,6 +28,6 @@ done
 # add helpers to PATH
 if [[ -d "${HOME}/.helper.sh.d/" ]]
 then
-    chmod +x -R "${HOME}/.helper.sh.d/"
+    chmod -R +x "${HOME}/.helper.sh.d/"
     PATH=${HOME}/.helper.sh.d:${PATH}
 fi
