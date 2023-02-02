@@ -8,15 +8,14 @@ bashcompinit -i
 autoload -U +X bashcompinit && bashcompinit
 
 # Select theme
-{{- if ( or ( eq .chezmoi.hostname "MacBook-Pro-von-devoba-admin" ) ( eq .chezmoi.hostname "LP30004" ) ) }}
-# load theme
 ZSH_THEME="eastwood"
 
 # make brew available
-eval $(/opt/homebrew/bin/brew shellenv)
-{{- else }}
-ZSH_THEME="lukerandall"
-{{- end }}
+case "$(uname)" in
+    "Darwin")
+    eval $(/opt/homebrew/bin/brew shellenv)
+esac
+
 
 # load common bash/zsh compatible shell configs
 for rc in "$HOME/.common.sh.d"/*; do
