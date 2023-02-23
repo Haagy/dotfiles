@@ -1,6 +1,7 @@
 if command -v terraform &> /dev/null
 then
     alias tf='terraform'
+    terraform --install-autocomplete
     export AWS_PROFILE=wepf
 fi
 
