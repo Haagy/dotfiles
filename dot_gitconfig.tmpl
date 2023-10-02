@@ -24,7 +24,7 @@
 [alias]
     l = log --stat
     ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat
-	  up = "!git remote update -p; git merge --ff-only @{u}"
+	  up = "!git remote update -p; git merge --ff-only @{u}; git pull origin \"$(git rev-parse --abbrev-ref HEAD)\""
     co = checkout
     fa = fetch --all
     a = add
