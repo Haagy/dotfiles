@@ -1,16 +1,8 @@
 [user]
-{{- if eq .GIT_MAIL_ID "BMW" }}
-    name = qxz3hva
-    email = Alexander.Haag@partner.bmwgroup.com
-{{- else if eq .GIT_MAIL_ID "Sulzer" }}
-    name = Alexander Haag (ext.)
-    email = Alexander.Haag.Partner@sulzer.de
-{{- else }}
     name = alexander haag
     email = alexander_haag@gmx.de
-{{- end }}
-[github]
-    user = Haagy
+[includeIf "gitdir:/Users/alexanderhaag/Work/BMW/git/"]
+	  path = /Users/alexanderhaag/Work/BMW/git/.gitconfig-bmw
 [color]
     ui = auto
 [color "branch"]
