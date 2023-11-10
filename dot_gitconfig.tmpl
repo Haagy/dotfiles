@@ -18,6 +18,7 @@
     ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --stat
 	  up = "!git remote update -p; git merge --ff-only @{u}; git pull origin \"$(git rev-parse --abbrev-ref HEAD)\""
     co = checkout
+    cob = checkout -b
     fa = fetch --all
     a = add
     cm = commit --message
@@ -36,7 +37,7 @@
 [pull]
     rebase = true
 [gpg]
-	  program = gpg
+	program = gpg
 [pager]
     branch = false
 
